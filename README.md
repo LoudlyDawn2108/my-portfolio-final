@@ -1,69 +1,164 @@
-# 🌐 3D Awwwards-Level Developer Portfolio Template
+# 💼 LoudlyDawn's Developer Portfolio
 
-<a href="https://awwwards-portfolio-template.vercel.app/" target="_blank">
+<a href="https://github.com/LoudlyDawn2108/my-portfolio-final" target="_blank">
   <img src="./public/images/thumbnail.png" alt="Portfolio Thumbnail" />
 </a>
 
-### Built with React, GSAP, Three.js, TailwindCSS & Framer Motion
+### Full-Stack Developer & System Architect
 
-This is a fully animated, interactive, 3D developer portfolio template designed to **impress clients, recruiters, and hiring managers**. It's more than a portfolio—it's a web experience built with production-level code, scroll-based animations, and real-world best practices.
+A fully animated, interactive 3D portfolio showcasing my projects in **microservices architecture**, **distributed systems**, and **cloud-native development**. Built with modern web technologies and production-level code.
 
+---
+
+## 👨‍💻 About Me
+
+Full-stack developer specializing in microservices architecture and real-time systems. Currently pursuing a Bachelor's degree in Software Engineering as a third-year student. Experienced with building scalable applications using TypeScript, Node.js, C#, Java, and cloud-native technologies.
+
+### 🎓 Education
+- **Bachelor of Science in Software Engineering** (Third Year)
+- Focus: Distributed Systems, Microservices, Full-Stack Development
+- Relevant Coursework: Data Structures, Algorithms, Software Architecture, Database Systems, Cloud Computing
+
+### 💼 Experience
+- **Software Engineering Intern** - Gaining hands-on experience with modern development practices and contributing to production systems
 
 ---
 
 ## 🚀 Tech Stack
 
-| Technology       | Description                             |
-| ---------------- | --------------------------------------- |
-| **React (Vite)** | Fast dev server and production bundling |
-| **Tailwind CSS** | Utility-first styling for components    |
-| **GSAP**         | Scroll-triggered animations and transitions |
-| **Framer Motion** | Scroll-velocity-based marquee animations |
-| **Three.js**     | 3D scenes powered by React Three Fiber  |
-| **Drei**         | Useful helpers for 3D rendering         |
+### Frontend
+- **React** with **Vite** - Modern UI development
+- **Three.js** & **React Three Fiber** - 3D graphics and animations
+- **Tailwind CSS** - Utility-first styling
+- **GSAP** - Scroll-triggered animations
+- **Framer Motion** - Smooth transitions and effects
+
+### Backend & Infrastructure
+- **Node.js** & **Express** - Server-side development
+- **C#** & **.NET** - Enterprise applications
+- **Java** - Backend services
+- **Kafka** - Event streaming
+- **Hazelcast** - Distributed caching
+- **PostgreSQL** & **SQL Server** - Database management
+- **Docker** - Containerization
 
 ---
 
-## 📁 Features
+## 🎯 Featured Projects
 
-- 🔥 3D Hero Section with animated planet and golden ring
-- 🧩 Smooth slide-in Navbar with staggered link animations
-- 🎯 Scroll-triggered Service Summary with horizontal word motion
-- 🖼️ Works section with hover overlays and interactive previews
-- ✍️ About section with clip-path image reveal + typewriter text
-- 🏁 Scroll-velocity marquee components with Framer Motion
-- 💼 Fully responsive and accessible on all screen sizes
+### 1. [PixelVerse](https://github.com/LoudlyDawn2108/pixelverse)
+Real-time collaborative pixel canvas platform with microservices architecture
+- **Tech**: Node.js, TypeScript, React, Kafka, Hazelcast
+- **Features**: WebSocket real-time updates, distributed state management, event-driven architecture
+
+### 2. [Netflix Clone](https://github.com/LoudlyDawn2108/netflix-clone)
+Cloud-native, enterprise-grade streaming platform
+- **Tech**: TypeScript, Java, C#, JavaScript
+- **Features**: Microservices architecture, API gateway, full-stack implementation
+
+### 3. [FantasticStock](https://github.com/LoudlyDawn2108/FantasticStock)
+Stock management and analytics system
+- **Tech**: C#, .NET, TSQL, SQL Server
+- **Features**: Enterprise data management, analytics dashboard
+
+### 4. [Drive](https://github.com/LoudlyDawn2108/drive)
+Cloud storage solution built with T3 Stack
+- **Tech**: Next.js, TypeScript, Drizzle ORM, tRPC
+- **Features**: Modern authentication, database management
+
+### 5. [CPU Scheduler Visualizer](https://github.com/LoudlyDawn2108/cpu-scheduler-viz)
+Interactive visualization tool for CPU scheduling algorithms
+- **Tech**: TypeScript, React, Vite, HTML5
+- **Features**: SJF and SRTN algorithm visualization
+
+### 6. [Caelestis](https://github.com/LoudlyDawn2108/caelestis)
+Custom shell configuration and system utilities
+- **Tech**: QML, C++, JavaScript, Shell
+- **Features**: Enhanced development workflow, UI components
+
+---
+
+## 📁 Portfolio Features
+
+- 🔥 3D Hero section with animated planet
+- 🎓 Education section with academic background
+- 💼 Experience section highlighting internship
+- 🛠️ Services section showcasing technical expertise
+- 📊 Works section with project showcase
+- 👤 About section with professional background
+- 📱 Fully responsive design
+- ⚡ Smooth scroll-based animations
+- 🎨 Modern UI/UX with GSAP and Framer Motion
 
 ---
 
 ## 📦 Setup & Installation
 
 ```bash
-git clone https://github.com/elijah-farrell/Awwwards-Portfolio.git
-cd portfolio-template02
+git clone https://github.com/LoudlyDawn2108/my-portfolio-final.git
+cd my-portfolio-final
 npm install
 npm run dev
 ```
 
 > Open http://localhost:5173 in your browser.
 
----
-
-## 🛠️ Customization Tips
-
-- Change text, images, and links in /constants/index.js
-
-- Update 3D models and scene in Hero.jsx
-
-- Add your own contact info in Contact.jsx
-
-- Adjust colors, fonts, and layout via tailwind.config.js
+### Build for Production
+```bash
+npm run build
+npm run preview
+```
 
 ---
+
+## 🛠️ Project Structure
+
+```
+src/
+├── components/       # Reusable UI components
+├── sections/        # Main portfolio sections
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Education.jsx
+│   ├── Experience.jsx
+│   ├── Services.jsx
+│   ├── Works.jsx
+│   └── Contact.jsx
+├── constants/       # Project data and content
+└── lib/            # Utility functions
+```
+
 ---
 
-## 📣 About This Template
+## 🎨 Customization
 
-This is a modern, 3D animated portfolio template perfect for developers, designers, and creatives who want to showcase their work in an impressive way.
-Based on [Ali-Sanati's awwwards portfolio](https://github.com/Ali-Sanati/awwwards-portfolio).
+Key files to personalize:
+- `src/constants/index.js` - Update projects, services, and links
+- `src/sections/Education.jsx` - Add university name and graduation year
+- `src/sections/Experience.jsx` - Add company name and dates
+- `src/sections/Contact.jsx` - Update contact information
+- `public/images/` - Replace with your own images
+
 ---
+
+## 📫 Contact
+
+- **GitHub**: [@LoudlyDawn2108](https://github.com/LoudlyDawn2108)
+- **LinkedIn**: [Connect with me](https://linkedin.com)
+- **Email**: hello@example.com
+
+---
+
+## 📝 License
+
+This portfolio is open source and available under the MIT License.
+
+---
+
+## 🙏 Acknowledgments
+
+Portfolio template based on [Ali-Sanati's awwwards portfolio](https://github.com/Ali-Sanati/awwwards-portfolio) design, customized and enhanced with personal projects and information.
+
+---
+
+**Built with ❤️ by LoudlyDawn**
