@@ -6,11 +6,11 @@ import gsap from "gsap";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 const About = () => {
-  const text = `Passionate about clean architecture
-    I build scalable, high-performance solutions
-    from prototype to production`;
-  const aboutText = `Committed to continuous growth in tech—from web development to AI research. Every challenge is a chance: expanding skills and contributing to meaningful projects.
-  When I'm not learning:`;
+  const text = `Passionate about distributed systems
+    I build scalable, cloud-native solutions
+    with modern architectures`;
+  const aboutText = `Full-stack developer specializing in microservices architecture and real-time systems. Experience with TypeScript, Node.js, C#, Java, and cloud-native technologies. Building everything from collaborative canvas platforms to enterprise stock management systems.
+  When I'm not coding:`;
   const imgRef = useRef(null);
   useGSAP(() => {
     gsap.to("#about", {
@@ -38,7 +38,7 @@ const About = () => {
   return (
     <section id="about" className="min-h-screen bg-black rounded-b-4xl">
       <AnimatedHeaderSection
-        subTitle={"Innovating with code, Growing through technology"}
+        subTitle={"Engineering solutions, Architecting systems"}
         title={"About"}
         text={text}
         textColor={"text-white"}
@@ -48,7 +48,7 @@ const About = () => {
         <img
           ref={imgRef}
           src="images/pfp.png"
-          alt="John Doe Smith"
+          alt="LoudlyDawn"
           className="w-md rounded-3xl"
         />
         <div className="w-full">
@@ -56,19 +56,19 @@ const About = () => {
           <div className="mt-4 space-y-2">
             <div className="flex items-center gap-3">
               <Icon icon="lucide:code" className="text-white/80" />
-              <span>Open-sourcing my latest experiment—because rising tides lift all ships</span>
+              <span>Building open-source projects and developer tools</span>
             </div>
             <div className="flex items-center gap-3">
-              <Icon icon="lucide:search" className="text-white/80" />
-              <span>Exploring new technologies</span>
+              <Icon icon="lucide:layers" className="text-white/80" />
+              <span>Exploring distributed systems and microservices</span>
             </div>
             <div className="flex items-center gap-3">
-              <Icon icon="lucide:mountain" className="text-white/80" />
-              <span>Hiking the Adirondacks</span>
+              <Icon icon="lucide:cpu" className="text-white/80" />
+              <span>Learning new algorithms and system design patterns</span>
             </div>
             <div className="flex items-center gap-3">
-              <Icon icon="lucide:gamepad-2" className="text-white/80" />
-              <span>Gaming</span>
+              <Icon icon="lucide:zap" className="text-white/80" />
+              <span>Optimizing performance and scalability</span>
             </div>
           </div>
         </div>

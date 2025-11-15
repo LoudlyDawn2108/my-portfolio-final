@@ -8,9 +8,9 @@ import { useGSAP } from "@gsap/react";
 const Works = () => {
   const overlayRefs = useRef([]);
 
-  const text = `Featured projects that have been meticulously
-    crafted with passion to drive
-    results and impact.`;
+  const text = `Open-source projects showcasing
+    distributed systems, real-time collaboration,
+    and modern architectures.`;
 
   useGSAP(() => {
     gsap.from("#project", {
@@ -64,7 +64,7 @@ const Works = () => {
   return (
     <section id="work" className="flex flex-col min-h-screen">
       <AnimatedHeaderSection
-        subTitle={"Logic meets Aesthetics, Seamlessly"}
+        subTitle={"Code that scales, Systems that perform"}
         title={"Works"}
         text={text}
         textColor={"text-black"}
