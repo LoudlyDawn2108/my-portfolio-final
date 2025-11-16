@@ -10,7 +10,7 @@ const About = () => {
     I build scalable, cloud-native solutions
     with modern architectures`;
   const aboutText = `Full-stack developer specializing in microservices architecture and real-time systems. Experience with TypeScript, Node.js, C#, Java, and cloud-native technologies. Building everything from collaborative canvas platforms to enterprise stock management systems.
-  When I'm not coding:`;
+  When I'm not jobing:`;
   const imgRef = useRef(null);
   useGSAP(() => {
     gsap.to("#about", {
