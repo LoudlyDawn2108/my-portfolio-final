@@ -1,13 +1,10 @@
 import { useRef } from "react";
-import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+import InteractiveHeader from "../components/InteractiveHeader";
 import { servicesData } from "../constants";
 import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 const Services = () => {
-  const text = `I build secure, high-performance full-stack apps
-    with smooth UX to drive growth 
-    not headaches.`;
   const serviceRefs = useRef([]);
   const isDesktop = useMediaQuery({ minWidth: "48rem" }); //768px
   useGSAP(() => {
@@ -27,10 +24,23 @@ const Services = () => {
   }, []);
   return (
     <section id="services" className="min-h-screen bg-black rounded-t-4xl">
-      <AnimatedHeaderSection
+      <InteractiveHeader
         subTitle={"From microservices to monoliths, From frontend to backend"}
         title={"Services"}
-        text={text}
+        textParts={[
+          [
+            { text: "I build " },
+            { text: "secure, high-performance", effect: "spotlight" },
+            { text: " full-stack apps" },
+          ],
+          [
+            { text: "with smooth " },
+            { text: "UX", effect: "underline" },
+            { text: " to drive " },
+            { text: "growth", effect: "paint" },
+          ],
+          [{ text: "not " }, { text: "headaches.", effect: "shift" }],
+        ]}
         textColor={"text-white"}
         withScrollTrigger={true}
       />

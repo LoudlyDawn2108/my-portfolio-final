@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Google Fonts for interactive text */
+@import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display:wght@400;700&family=Roboto+Mono:wght@400;600&family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap");
+
 /* Amiamie Regular */
 @font-face {
   font-family: "Amiamie";
@@ -200,4 +203,87 @@ body {
 @utility contact-text-responsive {
   @apply text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] xl:text-[62px] 2xl:text-[100px];
 }
+
+/* InteractiveHeader styles */
+.ih-part {
+  --x: 50%;
+  --y: 50%;
+  --spot-opacity: 0.08;
+  position: relative;
+  display: inline-block;
+  cursor: default;
+  transition: transform 180ms ease, color 160ms ease;
+}
+
+.ih-spotlight {
+  --spot-size: 160px;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,var(--spot-opacity)) 0%, rgba(255,255,255,0.04) 30%, transparent 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: inherit;
+}
+
+.ih-underline {
+  color: inherit;
+}
+.ih-underline .ih-underline-bar {
+  transform-origin: left center;
+  transition: transform 280ms ease;
+}
+
+.ih-paint {
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.04) 100%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: inherit;
+}
+
+.ih-shift {
+  display: inline-block;
+  transition: transform 220ms ease;
+}
+
+/* Accessibility: focus outline */
+.ih-part:focus {
+  outline: 2px solid rgba(255,255,255,0.12);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ih-part { transition: none !important; }
+  .ih-underline .ih-underline-bar { transition: none !important; }
+}
+
+/* Per-effect font styling for personality */
+.ih-spotlight {
+  font-family: "Momo Trust Display", serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.ih-underline {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ih-paint {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.ih-shift {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.ih-default {
+  font-family: inherit;
+}
+
+
 

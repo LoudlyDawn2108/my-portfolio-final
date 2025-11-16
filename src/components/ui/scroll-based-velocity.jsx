@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useRef, useState } from "react"
 import {
   motion,
@@ -10,7 +11,7 @@ import {
 } from "motion/react"
 import { cn } from "../../lib/utils"
 
-export const wrap = (min, max, v) => {
+const wrap = (min, max, v) => {
   const rangeSize = max - min
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min
 }
@@ -23,7 +24,6 @@ export function ScrollVelocityContainer({
   ...props
 }) {
   const { scrollY } = useScroll()
-  const scrollVelocity = useVelocity(scrollY)
   const [virtualScrollY, setVirtualScrollY] = useState(0)
   
   // Create a virtual scroll that continues beyond the bottom
