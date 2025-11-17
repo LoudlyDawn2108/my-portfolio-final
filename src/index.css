@@ -1,7 +1,7 @@
+/* Google Fonts for interactive text */
+@import url("https://fonts.googleapis.com/css2?family=Amiamie:wght@400;700&family=Momo+Trust+Display:wght@400;700&family=Roboto+Mono:wght@400;600&family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap");
 @import "tailwindcss";
 
-/* Google Fonts for interactive text */
-@import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display:wght@400;700&family=Roboto+Mono:wght@400;600&family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap");
 
 /* Amiamie Regular */
 @font-face {

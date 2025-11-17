@@ -78,6 +78,7 @@ const Works = () => {
             className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
+            onClick={() => window.open(project.href, "_blank")}
           >
             {/* overlay */}
             <div
@@ -85,6 +86,7 @@ const Works = () => {
                 overlayRefs.current[index] = el;
               }}
               className="absolute inset-0 hidden md:block duration-200 bg-black -z-10 clip-path"
+              
             />
 
             {/* title */}
