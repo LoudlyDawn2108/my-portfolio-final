@@ -39,7 +39,7 @@ const Services = () => {
             { text: " to drive " },
             { text: "growth", effect: "paint" },
           ],
-          [{ text: "not " }, { text: "headaches.", effect: "shift" }],
+          [{ text: "not headaches", effect: "shift" }],
         ]}
         textColor={"text-white"}
         withScrollTrigger={true}

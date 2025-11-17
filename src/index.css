@@ -1,5 +1,5 @@
 /* Google Fonts for interactive text */
-@import url("https://fonts.googleapis.com/css2?family=Amiamie:wght@400;700&family=Momo+Trust+Display:wght@400;700&family=Roboto+Mono:wght@400;600&family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Oleo+Script:wght@400;700&family=Charm:wght@400;700&family=Amiamie:wght@400;700&family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;600&family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap");
 @import "tailwindcss";
 
 
@@ -226,10 +226,6 @@ body {
 .ih-underline {
   color: inherit;
 }
-.ih-underline .ih-underline-bar {
-  transform-origin: left center;
-  transition: transform 280ms ease;
-}
 
 .ih-paint {
   background-image: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.04) 100%);
@@ -258,25 +254,25 @@ body {
 
 /* Per-effect font styling for personality */
 .ih-spotlight {
-  font-family: "Momo Trust Display", serif;
+  font-family: "Orbitron", serif;
   font-weight: 700;
   letter-spacing: 0.05em;
 }
 
 .ih-underline {
-  font-family: "Poppins", sans-serif;
+  font-family: "Charm", sans-serif;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .ih-paint {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
+  font-family: "Oleo Script", monospace;
+  font-weight: 400;
   letter-spacing: 0.03em;
 }
 
 .ih-shift {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Mountains of Christmas", cursive;
   font-weight: 600;
   letter-spacing: 0.01em;
 }

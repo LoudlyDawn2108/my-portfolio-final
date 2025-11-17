@@ -2,28 +2,34 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { CSSPlugin } from "gsap/CSSPlugin";
+import { Physics2DPlugin } from "gsap/Physics2DPlugin";
+import { TextPlugin } from "gsap/TextPlugin";
+import { SplitText } from "gsap/all";
 
-gsap.registerPlugin(CSSPlugin);
+gsap.registerPlugin(CSSPlugin, Physics2DPlugin, TextPlugin);
 
 const InteractiveTextLines = ({ textParts }) => {
   const containerRef = useRef(null);
   const partRefs = useRef([]);
   const lineRefs = useRef([]);
 
-  useGSAP(() => {
-    if (lineRefs.current.length > 0) {
-      gsap.from(lineRefs.current, {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: "back.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-        },
-      });
-    }
-  }, { scope: containerRef });
+  useGSAP(
+    () => {
+      if (lineRefs.current.length > 0) {
+        gsap.from(lineRefs.current, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.3,
+          ease: "back.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+          },
+        });
+      }
+    },
+    { scope: containerRef }
+  );
 
   const { contextSafe } = useGSAP(() => {}, { scope: containerRef });
 
@@ -34,7 +40,7 @@ const InteractiveTextLines = ({ textParts }) => {
         gsap.to(el, { y: -6, scale: 1.02, duration: 0.28, ease: "power1.out" });
         gsap.to(el, {
           "--spot-opacity": 0.28,
-          duration: 0.28,
+          duration: 0.8,
           ease: "power1.out",
         });
         break;
@@ -42,7 +48,7 @@ const InteractiveTextLines = ({ textParts }) => {
         gsap.to(el.querySelector(".ih-underline-bar"), {
           scaleX: 1,
           transformOrigin: "left center",
-          duration: 0.28,
+          duration: 0.3,
           ease: "power1.out",
         });
         break;
@@ -54,14 +60,29 @@ const InteractiveTextLines = ({ textParts }) => {
         });
         gsap.to(el, { y: -4, duration: 0.28, ease: "power1.out" });
         break;
-      case "shift":
-        gsap.to(el, { x: 2, skewX: 2, duration: 0.22, ease: "power1.out" });
+      case "shift": {
+        // Use GSAP SplitText to split into characters
+        const split = SplitText.create(el, { type: "chars" });
+        const chars = split.chars;
+
+        chars.forEach((char, i) => {
+          gsap.to(char, {
+            physics2D: {
+              angle: gsap.utils.random(235, 295),
+              velocity: gsap.utils.random(400, 700),
+              gravity: 1500,
+            },
+            autoAlpha: 0,
+            duration: 1,
+            ease: "power1.in",
+            delay: i * 0.02
+          });
+        });
         break;
+      }
       default:
-        gsap.to(el, { y: -4, duration: 0.2, ease: "power1.out" });
     }
   });
-
 
   const handleLeave = contextSafe((el, effect) => {
     if (!el) return;
@@ -89,11 +110,20 @@ const InteractiveTextLines = ({ textParts }) => {
         });
         gsap.to(el, { y: 0, duration: 0.28, ease: "power1.out" });
         break;
-      case "shift":
-        gsap.to(el, { x: 0, skewX: 0, duration: 0.22, ease: "power1.out" });
+      case "shift": {
+        // Restore original text with SplitText revert
+        const originalText = el.getAttribute("data-original-text");
+        if (originalText) {
+          el.innerHTML = originalText;
+          gsap.from(el, {
+            opacity: 0,
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        }
         break;
+      }
       default:
-        gsap.to(el, { y: 0, duration: 0.2, ease: "power1.out" });
     }
   });
 
@@ -125,6 +155,7 @@ const InteractiveTextLines = ({ textParts }) => {
                 key={key}
                 ref={(el) => partRefs.current.push(el)}
                 className={`ih-part ih-${effect} inline-block relative mr-0 mx-2`}
+                data-original-text={part.text}
                 tabIndex={0}
                 onMouseEnter={(e) => handleHover(e.currentTarget, effect)}
                 onMouseLeave={(e) => handleLeave(e.currentTarget, effect)}
